@@ -1,0 +1,21 @@
+.jumbotron {
+    background: khaki;
+    text-shadow: 
+    /* background-image: url(/Homework/homework_7/Train_Station/assets/images/camila-damasio-2713-unsplash.jpg) */
+}
+
+.lead {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form {
+    font-weight: bold;
+}
+
+/* body {
+    background-image: url('assets/images/camila-damasio-2713-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+} */
