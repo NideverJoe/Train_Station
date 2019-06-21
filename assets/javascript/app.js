@@ -31,7 +31,7 @@ setInterval(function(){
       var trainfirsttime = "";
   
       // Capture Button Click
-      $("#add-user").on("click", function(event) {
+      $("#addtrain").on("click", function(event) {
         event.preventDefault();
   
         // Grabbed values from text boxes
@@ -63,10 +63,7 @@ setInterval(function(){
         console.log(sv.trainfirsttime);
   
         // create and append rows to table
-        $("#name-display").text(sv.name);
-        $("#email-display").text(sv.email);
-        $("#age-display").text(sv.age);
-        $("#comment-display").text(sv.comment);
+var newrow;
   
         // Handle the errors
       }, function(errorObject) {
