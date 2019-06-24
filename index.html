@@ -1,55 +1,51 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Train Timer</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body background="assets/images/camila-damasio-2713-unsplash.jpg">
-      
-      <div class="container">
-          <div class="jumbotron text-center py-1 mb-1 ";">
-              <h1 class="display-3">Train Timer</h1>
-              <p class="lead">Don't miss your train!</p>
-              <hr class="my-1">
-              <p>Current Time</p>
-              <p id="currenttime"></p>
-          </div>
-          <div class="card border-secondary my-2">
-            <table class="table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Train Name</th>
-                    <th scope="col">Destination</th>
-                    <th scope="col">Frequency (min)</th>
-                    <th scope="col">Next Arrival</th>
-                    <th scope="col">Minutes Away</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Placeholder</th>
-                    <td>Placeholder</td>
-                    <td>Placeholder</td>
-                    <td>Placeholder</td>
-                    <td>Placeholder</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Placeholder</th>
-                    <td>Placeholder</td>
-                    <td>Placeholder</td>
-                    <td>Placeholder</td>
-                    <td>Placeholder</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-<div class="card border-secondary">
-    <form class="px-2 py-2">
+<head>
+  <title>Train Timer</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body background="assets/images/camila-damasio-2713-unsplash.jpg">
+
+  <div class="container">
+    <div class="jumbotron text-center py-1 mb-1 " ;">
+      <h1 class="display-3">Train Timer</h1>
+      <p class="lead">Don't miss your train!</p>
+      <hr class="my-1">
+      <p>Current Time</p>
+      <p id="currenttime"></p>
+    </div>
+    <div id="patient" class=" px-1 py-1 card text-center font-weight-bold">
+      <div class="card-body">
+          <p class="display-4">Please be patient while times update...</p>
+          <img src="assets/images/6925278df94fe248-alley-cats-and-drifters-mudpuppy-magnetic-trains.gif" height="125" alt="trainsloading">
+
+      </div>
+    </div>
+    <div class="card border-secondary my-2">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Train Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Frequency (min)</th>
+            <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody id=tablecontent>
+        </tbody>
+      </table>
+    </div>
+    <div class="card border-secondary">
+      <form class="px-2 py-2">
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">Train Name</label>
           <div class="col-sm-9">
@@ -57,23 +53,23 @@
           </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Destination</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="addtraindestination">
-            </div>
+          <label class="col-sm-3 col-form-label">Destination</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="addtraindestination">
           </div>
-          <div class="form-group row">
-            <label class="col-sm-3 col-form-label">First Train Time <p>(HH:mm - military time)</p></label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="addtrainfirsttime">
-            </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">First Train Time <p>(HH:mm - military time)</p></label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="addtrainfirsttime">
           </div>
-          <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Frequency (min)</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="addtrainfrequency">
-            </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Frequency (min)</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="addtrainfrequency">
           </div>
+        </div>
 
         <div class="form-group row">
           <div class="col-sm-10">
@@ -81,20 +77,28 @@
           </div>
         </div>
       </form>
-</div>
-          </div>
-          
-      </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    </div>
+  </div>
 
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css">  </body>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</body>
 <script src="assets/javascript/app.js"></script>
+
 </html>
